@@ -38,15 +38,15 @@ def get_occurrences(pattern, text):
         patternHash = (10*patternHash+ord(pattern[i])) % Q
         textHash = (10*textHash+ord(text[i])) % Q
     occurances = []
-    print("pattern hash:"+ str(patternHash))
-    print("initial text hash"+ str(textHash))
+    #print("pattern hash:"+ str(patternHash))
+    #print("initial text hash"+ str(textHash))
     for i in range(len(text) - patternLength+1):
         if patternHash == textHash and text[i:i+patternLength] == pattern:
             occurances.append(i)
         if i < len(text) - patternLength:
             #textHash = (textHash - (ord(text[i])*((10**patternLength-1)%Q)))*10 + ord(text[i+patternLength]) % Q
             textHash = (10*(textHash - ord(text[i]) * pow(10, patternLength-1, Q)) + ord(text[i+patternLength])) % Q
-            print("new text hash:"+ str(textHash))
+            #print("new text hash:"+ str(textHash))
 
     # and return an iterable variable #[0]
     return occurances
