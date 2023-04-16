@@ -6,9 +6,7 @@ def read_input():
     input_type = input()
     if input_type == 'I':
         pattern = input().rstrip()
-        print(pattern)
         text = input().rstrip()
-        print(text)
     else:
         fileName = "tests/06"
         file1 = open(fileName)
