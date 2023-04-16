@@ -8,6 +8,7 @@ def read_input():
         pattern = input().rstrip()
         text = input().rstrip()
     else:
+        print(input())
         fileName = "tests/06"
         file1 = open(fileName)
         pattern = file1.readline().rstrip()
